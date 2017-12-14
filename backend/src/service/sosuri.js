@@ -1,52 +1,39 @@
 "use strict";
 
-const user = require('../models').user;
+const sosuri = require('../models').sosuri;
 
 exports.list = function (req, res) {
-  user.findAll().then(user => {
-    res.jsonp(user);
+  sosuri.findAll().then(user => {
+    res.jsonp(sosuri);
   }).catch((error) => res.status(400).send(error));
 };
 
 exports.create = function (req, res) {
-  res.jsonp(user.create(req.body));
+  res.jsonp(sosuri.create(req.body));
 };
 
 exports.findById = function (req, res) {
   let id = req.params.id;
-  user.findById(id).then(user => {
-    if (!user) {
+  sosuri.findById(id).then(user => {
+    if (!sosuri) {
       return res.status(400).send({
         message: 'User Not Found',
       });
     }
-    res.jsonp(user);
+    res.jsonp(sosuri);
   });
 };
 
-//doesn't work
-// exports.update = function(req, res) {
-//   var id = req.params.id;
-//   var updates = req.body;
-
-//   user.update((id), req.body,
-//     function (err, numberAffected) {
-//       if (err) return console.log(err);
-//       console.log('Updated %d user', numberAffected);
-//       res.send(202);
-//   });
-// }
-
 exports.delete = function (req, res) {
   let id = req.params.id;
-  user.findById(req.params.id)
-    .then(user => {
-      if (!user) {
+  sosuri.findById(req.params.id)
+    .then(sosuri => {
+      if (!sosuri) {
         return res.status(400).send({
           message: 'User Not Found',
         });
       }
-      return user
+      return sosuri
         .destroy()
         .then(() => res.status(204).send())
         .catch(error => res.status(400).send(error));

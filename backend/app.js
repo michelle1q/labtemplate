@@ -25,8 +25,11 @@ app.use(cookieParser());
 // Controllers
 var index = require('./src/rest/index');
 var user = require('./src/rest/user');
+ //var sosuri = require('./src/rest/sosuri');
+
 app.use('/api', index);
 app.use('/api/user', user);
+// app.use('/api/sosuri', sosuri);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

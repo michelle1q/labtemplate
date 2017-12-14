@@ -24,19 +24,6 @@ exports.findById = function (req, res) {
   });
 };
 
-//doesn't work
-// exports.update = function(req, res) {
-//   var id = req.params.id;
-//   var updates = req.body;
-
-//   user.update((id), req.body,
-//     function (err, numberAffected) {
-//       if (err) return console.log(err);
-//       console.log('Updated %d user', numberAffected);
-//       res.send(202);
-//   });
-// }
-
 exports.delete = function (req, res) {
   let id = req.params.id;
   user.findById(req.params.id)

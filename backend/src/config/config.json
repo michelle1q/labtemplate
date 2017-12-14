@@ -1,17 +1,17 @@
 {
   "development": {
-    "username": "xxcfubeg",
-    "password": "gQPxg-IoszCT9Ca2HlWDf4z97H5cloRr",
-    "database": "xxcfubeg",
-    "host": "horton.elephantsql.com",
+    "username": "vcazwmeq",
+    "password": "8sx9EqGXrJETbjTjZzDlJuTV6dIF1ECy",
+    "database": "vcazwmeq",
+    "host": "baasu.db.elephantsql.com",
     "port": 5432,
     "dialect": "postgres"
   },
   "production": {
-    "username": "xxcfubeg",
-    "password": "gQPxg-IoszCT9Ca2HlWDf4z97H5cloRr",
-    "database": "xxcfubeg",
-    "host": "horton.elephantsql.com",
+    "username": "vcazwmeq",
+    "password": "8sx9EqGXrJETbjTjZzDlJuTV6dIF1ECy",
+    "database": "vcazwmeq",
+    "host": "baasu.db.elephantsql.com",
     "port": 5432,
     "dialect": "postgres"
   }

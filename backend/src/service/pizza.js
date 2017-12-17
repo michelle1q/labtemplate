@@ -1,39 +1,39 @@
 "use strict";
 
-const user = require('../models').user;
+const pizza = require('../models').pizza;
 
 exports.list = function (req, res) {
-  user.findAll().then(user => {
-    res.jsonp(user);
+  pizza.findAll().then(pizza => {
+    res.jsonp(pizza);
   }).catch((error) => res.status(400).send(error));
 };
 
 exports.create = function (req, res) {
-  res.jsonp(user.create(req.body));
+  res.jsonp(pizza.create(req.body));
 };
 
 exports.findById = function (req, res) {
   let id = req.params.id;
-  user.findById(id).then(user => {
-    if (!user) {
+  pizza.findById(id).then(pizza => {
+    if (!pizza) {
       return res.status(400).send({
-        message: 'User Not Found',
+        message: 'pizza Not Found',
       });
     }
-    res.jsonp(user);
+    res.jsonp(pizza);
   });
 };
 
 exports.delete = function (req, res) {
   let id = req.params.id;
-  user.findById(req.params.id)
-    .then(user => {
-      if (!user) {
+  pizza.findById(req.params.id)
+    .then(pizza => {
+      if (!pizza) {
         return res.status(400).send({
-          message: 'User Not Found',
+          message: 'pizza Not Found',
         });
       }
-      return user
+      return pizza
         .destroy()
         .then(() => res.status(204).send())
         .catch(error => res.status(400).send(error));

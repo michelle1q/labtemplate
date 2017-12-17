@@ -2,10 +2,16 @@
 
 const sosuri = require('../models').sosuri;
 
+
 exports.list = function (req, res) {
-  sosuri.findAll().then(user => {
+  sosuri.findAll().then(sosuri => {
     res.jsonp(sosuri);
-  }).catch((error) => res.status(400).send(error));
+  });
+  //.catch((error) => res.status(400).send(error));
+};
+
+exports.create = function (req, res) {
+  res.jsonp(sosuri.create(req.body));
 };
 
 exports.create = function (req, res) {
@@ -14,10 +20,10 @@ exports.create = function (req, res) {
 
 exports.findById = function (req, res) {
   let id = req.params.id;
-  sosuri.findById(id).then(user => {
+  sosuri.findById(id).then(sosuri => {
     if (!sosuri) {
       return res.status(400).send({
-        message: 'User Not Found',
+        message: 'sosuri Not Found',
       });
     }
     res.jsonp(sosuri);
@@ -30,7 +36,7 @@ exports.delete = function (req, res) {
     .then(sosuri => {
       if (!sosuri) {
         return res.status(400).send({
-          message: 'User Not Found',
+          message: 'sosuri Not Found',
         });
       }
       return sosuri

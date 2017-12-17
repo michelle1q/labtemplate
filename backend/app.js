@@ -29,7 +29,7 @@ var user = require('./src/rest/user');
 
 app.use('/api', index);
 app.use('/api/user', user);
-// app.use('/api/sosuri', sosuri);
+ //app.use('/api/sosuri', sosuri);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

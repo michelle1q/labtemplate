@@ -5,6 +5,6 @@ var sandwich = require('../service/').sandwich;
 router.get('/', sandwich.list);
 router.get('/:id', sandwich.findById);
 router.post('/', sandwich.create);
-// router.put('/:id',user.update);
+router.put('/:id',sandwich.update);
 router.delete('/:id', sandwich.delete);
 module.exports = router;

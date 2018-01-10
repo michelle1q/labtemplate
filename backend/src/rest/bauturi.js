@@ -5,6 +5,6 @@ var bauturi = require('../service/').bauturi;
 router.get('/', bauturi.list);
 router.get('/:id', bauturi.findById);
 router.post('/', bauturi.create);
-// router.put('/:id',user.update);
+router.put('/:id',bauturi.update);
 router.delete('/:id', bauturi.delete);
 module.exports = router;

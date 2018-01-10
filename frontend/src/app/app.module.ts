@@ -20,13 +20,20 @@ import { HomeComponent } from './components';
 import { fakeBackendProvider } from './service';
 import { MockBackend, MockConnection } from '@angular/http/testing';
 import { BaseRequestOptions } from '@angular/http';
-
+import { UserComponent } from './components/pages/user/user.component';
+import { DataTableModule } from 'primeng/primeng';
+import {ContextMenuModule }from 'primeng/primeng';
+import {DialogModule} from 'primeng/primeng';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
+    DialogModule,
+    ContextMenuModule ,
+      DataTableModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,

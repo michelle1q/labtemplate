@@ -25,11 +25,24 @@ app.use(cookieParser());
 // Controllers
 var index = require('./src/rest/index');
 var user = require('./src/rest/user');
- //var sosuri = require('./src/rest/sosuri');
+ var sosuri = require('./src/rest/sosuri');
+ var bauturi = require('./src/rest/bauturi');
+ var deserturi = require('./src/rest/deserturi');
+ var sandwich = require('./src/rest/sandwich');
+ var comentariu = require('./src/rest/comentariu');
+ var salate = require('./src/rest/salate');
+ var pizza = require('./src/rest/pizza');
+
 
 app.use('/api', index);
 app.use('/api/user', user);
- //app.use('/api/sosuri', sosuri);
+app.use('/api/sosuri', sosuri);
+app.use('/api/bauturi', bauturi);
+app.use('/api/deserturi', deserturi);
+app.use('/api/sandwich', sandwich);
+app.use('/api/comentariu', comentariu);
+app.use('/api/salate', salate);
+app.use('/api/pizza', pizza);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -5,6 +5,6 @@ var sosuri = require('../service/').sosuri;
 router.get('/', sosuri.list);
 router.get('/:id', sosuri.findById);
 router.post('/', sosuri.create);
-// router.put('/:id',user.update);
+router.put('/:id',sosuri.update);
 router.delete('/:id', sosuri.delete);
 module.exports = router;

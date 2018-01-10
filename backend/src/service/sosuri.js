@@ -6,12 +6,7 @@ const sosuri = require('../models').sosuri;
 exports.list = function (req, res) {
   sosuri.findAll().then(sosuri => {
     res.jsonp(sosuri);
-  });
-  //.catch((error) => res.status(400).send(error));
-};
-
-exports.create = function (req, res) {
-  res.jsonp(sosuri.create(req.body));
+  }).catch((error) => res.status(400).send(error));
 };
 
 exports.create = function (req, res) {
@@ -27,6 +22,20 @@ exports.findById = function (req, res) {
       });
     }
     res.jsonp(sosuri);
+  });
+};
+
+exports.update=function(req, res) {
+  sosuri.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function (updatedRecords) {
+    res.status(200).json(updatedRecords);
+  })
+  .catch(function (error){
+    res.status(500).json(error);
   });
 };
 

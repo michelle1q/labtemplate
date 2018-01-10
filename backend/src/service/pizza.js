@@ -24,6 +24,20 @@ exports.findById = function (req, res) {
   });
 };
 
+exports.update=function(req, res) {
+  pizza.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function (updatedRecords) {
+    res.status(200).json(updatedRecords);
+  })
+  .catch(function (error){
+    res.status(500).json(error);
+  });
+};
+
 exports.delete = function (req, res) {
   let id = req.params.id;
   pizza.findById(req.params.id)

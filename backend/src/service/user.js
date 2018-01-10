@@ -24,18 +24,19 @@ exports.findById = function (req, res) {
   });
 };
 
-//doesn't work
-// exports.update = function(req, res) {
-//   var id = req.params.id;
-//   var updates = req.body;
-
-//   user.update((id), req.body,
-//     function (err, numberAffected) {
-//       if (err) return console.log(err);
-//       console.log('Updated %d user', numberAffected);
-//       res.send(202);
-//   });
-// }
+exports.update=function(req, res) {
+  user.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(function (updatedRecords) {
+    res.status(200).json(updatedRecords);
+  })
+  .catch(function (error){
+    res.status(500).json(error);
+  });
+};
 
 exports.delete = function (req, res) {
   let id = req.params.id;

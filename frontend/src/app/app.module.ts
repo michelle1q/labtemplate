@@ -24,11 +24,25 @@ import { UserComponent } from './components/pages/user/user.component';
 import { DataTableModule } from 'primeng/primeng';
 import {ContextMenuModule }from 'primeng/primeng';
 import {DialogModule} from 'primeng/primeng';
+import { SosuriComponent } from './sosuri/sosuri.component';
+import { SandwichComponent } from './sandwich/sandwich.component';
+import { SalateComponent } from './salate/salate.component';
+import { PizzaComponent } from './pizza/pizza.component';
+import { DeserturiComponent } from './deserturi/deserturi.component';
+import { ComentariuComponent } from './comentariu/comentariu.component';
+import { BauturiComponent } from './bauturi/bauturi.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    SosuriComponent,
+    SandwichComponent,
+    SalateComponent,
+    PizzaComponent,
+    DeserturiComponent,
+    ComentariuComponent,
+    BauturiComponent
   ],
   imports: [
     DialogModule,

@@ -1,9 +1,9 @@
 <p-dataTable [value]="sandwich" selectionMode="single" [(selection)]="selectedSandwich" [contextMenu]="cm"  [paginator]="true" rows="15" [responsive]="true">
   <p-header>CRUD for Users</p-header>
-  <p-column field="sa_tip" header="Sa_tip" [sortable]="true"></p-column>
-  <p-column field="sa_descriere" header="Sa_descriere" [sortable]="true"></p-column>
-  <p-column field="sa_pret" header="Sa_pret" [sortable]="true"></p-column>
-  <p-column field="sa_gramaj" header="Sa_gramaj" [sortable]="true"></p-column>
+  <p-column field="sandwich_tip" header="Sandwich_tip" [sortable]="true"></p-column>
+  <p-column field="sandwich_descriere" header="Sandwich_descriere" [sortable]="true"></p-column>
+  <p-column field="sandwich_pret" header="Sandwich_pret" [sortable]="true"></p-column>
+  <p-column field="sandwich_gramaj" header="Sandwich_gramaj" [sortable]="true"></p-column>
   <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
 </p-dataTable>
 
@@ -12,20 +12,20 @@
 <p-dialog header="Sandwich Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
   <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="user">
       <div class="ui-grid-row">
-          <div class="ui-grid-col-4"><label for="sa_tip">Sa_tip</label></div>
-          <div class="ui-grid-col-8"><input pInputText id="sa_tip" [(ngModel)]="sandwich.sa_tip" /></div>
+          <div class="ui-grid-col-4"><label for="sandwich_tip">Sandwich_tip</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="sandwich_tip" [(ngModel)]="sandwich.sandwich_tip" /></div>
       </div>
       <div class="ui-grid-row">
-          <div class="ui-grid-col-4"><label for="sa_descriere">Sa_descriere</label></div>
-          <div class="ui-grid-col-8"><input pInputText id="sa_descriere" [(ngModel)]="sandwich.sa_descriere" /></div>
+          <div class="ui-grid-col-4"><label for="sandwich_descriere">Sandwich_descriere</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="sandwich_descriere" [(ngModel)]="sandwich.sandwich_descriere" /></div>
       </div>
       <div class="ui-grid-row">
-          <div class="ui-grid-col-4"><label for="sa_pret">Sa_pret</label></div>
-          <div class="ui-grid-col-8"><input pInputText id="sa_pret" [(ngModel)]="sandwich.sa_pret" /></div>
+          <div class="ui-grid-col-4"><label for="sandwich_pret">Sandwich_pret</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="sandwich_pret" [(ngModel)]="sandwich.sandwich_pret" /></div>
       </div>
       <div class="ui-grid-row">
-          <div class="ui-grid-col-4"><label for="sa_gramaj">Sa_gramaj</label></div>
-          <div class="ui-grid-col-8"><input pInputText id="sa_gramaj" [(ngModel)]="sandwich.sa_gramaj" /></div>
+          <div class="ui-grid-col-4"><label for="sandwich_gramaj">Sandwich_gramaj</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="sandwich_gramaj" [(ngModel)]="sandwich.sandwich_gramaj" /></div>
       </div>
   </div>
   <p-footer>

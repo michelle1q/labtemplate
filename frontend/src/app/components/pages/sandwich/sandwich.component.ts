@@ -29,17 +29,17 @@ export class SandwichComponent implements OnInit {
   
     }
     deleteSandwich(select: Sandwich) {
-      this.apiService.delete('api/sandwich/' + select.sa_tip).subscribe(res => {
+      this.apiService.delete('api/sandwich/' + select.sandwich_tip).subscribe(res => {
         console.log(res);
       });
   }
 }
 
 interface Sandwich {
-  sa_tip: string,
-  sa_descriere: string,
-  sa_pret: string,
-  sa_gramaj: string
+  sandwich_tip: string,
+  sandwich_descriere: string,
+  sandwich_pret: string,
+  sandwich_gramaj: string
 }
   
 

@@ -28,16 +28,16 @@ export class SalateComponent implements OnInit {
   
     }
     deleteSalate(select: Salate) {
-      this.apiService.delete('api/salate/' + select.sal_tip).subscribe(res => {
+      this.apiService.delete('api/salate/' + select.salate_tip).subscribe(res => {
         console.log(res);
       });
   }
 }
 
   interface Salate {
-    sal_tip: string,
-    sal_descriere: string,
-    sal_pret: string,
-    sal_gramaj: string
+    salate_tip: string,
+    salate_descriere: string,
+    salate_pret: string,
+    salate_gramaj: string
   }
 

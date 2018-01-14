@@ -1,3 +1,40 @@
-<p>
-  bauturi works!
-</p>
+<p-dataTable [value]="bauturi" selectionMode="single" [(selection)]="selectedBauturi" [contextMenu]="cm"  [paginator]="true" rows="15" [responsive]="true">
+  <p-header>CRUD for Bauturi</p-header>
+  <p-column field="bauturi_tip" header="Bauturi_tip" [sortable]="true"></p-column>
+  <p-column field="bauturi_descriere" header="Bauturi_descriere" [sortable]="true"></p-column>
+  <p-column field="bauturi_pret" header="Bauturi_pret" [sortable]="true"></p-column>
+  <p-column field="bauturi_gramaj" header="Bauturi_gramaj" [sortable]="true"></p-column>
+  <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
+</p-dataTable>
+
+  
+  <p-contextMenu #cm [model]="items"></p-contextMenu>
+<p-dialog header="Comentariu Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="user">
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="bauturi_tip">Bauturi_tip</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="bauturi_tip" [(ngModel)]="bauturi.bauturi_tip" /></div>
+      </div>
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="bauturi_descriere">Bauturi_descriere</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="bauturi_descriere" [(ngModel)]="bauturi.bauturi_descriere" /></div>
+      </div>
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="bauturi_pret">Bauturi_pret</label></div>
+          <div class="ui-grid-col-8"><input pInputText id=bauturi_pret" [(ngModel)]="bauturi.comentariu_pret" /></div>
+      </div>
+      <div class="ui-grid-row">
+          <div class="ui-grid-col-4"><label for="bauturi_gramaj">Bauturi_gramaj</label></div>
+          <div class="ui-grid-col-8"><input pInputText id="bauturi_gramaj" [(ngModel)]="bauturi.comentariu_gramaj" /></div>
+      </div>
+  </div>
+  <p-footer>
+      <div class="ui-dialog-buttonpane ui-helper-clearfix">
+          <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+          <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+      </div>
+  </p-footer>
+</p-dialog>
+
+
+

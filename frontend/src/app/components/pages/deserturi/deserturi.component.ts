@@ -29,16 +29,17 @@ export class DeserturiComponent implements OnInit {
   
     }
     deleteDeserturi(select: Deserturi) {
-      this.apiService.delete('api/deserturi/' + select.deserturi_tip).subscribe(res => {
+      this.apiService.delete('api/deserturi/' + select.id).subscribe(res => {
         console.log(res);
       });
   }
 }
 
 interface Deserturi {
-  deserturi_tip: string,
-  deserturi_descriere: string,
-  deserturi_pret: string,
-  deserturi_gramaj: string
+  id: string,
+  d_tip: string,
+  d_descriere: string,
+  d_pret: string,
+  d_gramaj: string
 }
   

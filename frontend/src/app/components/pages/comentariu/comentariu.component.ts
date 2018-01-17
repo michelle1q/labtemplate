@@ -30,17 +30,15 @@ export class ComentariuComponent implements OnInit {
   
     }
     deleteComentariu(select: Comentariu) {
-      this.apiService.delete('api/comentariu/' + select.comentariu_tip).subscribe(res => {
+      this.apiService.delete('api/comentariu/' + select.id).subscribe(res => {
         console.log(res);
       });
   }
 }
 
 interface Comentariu {
-  comentariu_tip: string,
-  comentariu_descriere: string,
-  comentariu_pret: string,
-  comentariu_gramaj: string
+  id:String
+  continut:String
 }
   
 

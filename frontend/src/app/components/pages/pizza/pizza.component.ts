@@ -29,16 +29,17 @@ export class PizzaComponent implements OnInit {
   
     }
     deletePizza(select: Pizza) {
-      this.apiService.delete('api/pizza/' + select.pizza_tip).subscribe(res => {
+      this.apiService.delete('api/pizza/' + select.id).subscribe(res => {
         console.log(res);
       });
   }
 }
 
   interface Pizza {
-    pizza_tip: string,
-    pizza_descriere: string,
-    pizza_pret: string,
-    pizza_gramaj: string
+    id: string,
+    p_tip: string,
+    p_descriere: string,
+    p_pret: string,
+    p_gramaj: string
   }
 

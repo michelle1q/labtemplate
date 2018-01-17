@@ -1,9 +1,9 @@
 <p-dataTable [value]="salate" selectionMode="single" [(selection)]="selectedSalate" [contextMenu]="cm"  [paginator]="true" rows="15" [responsive]="true">
   <p-header>CRUD for Salate</p-header>
-  <p-column field="salate_tip" header="Salate_tip" [sortable]="true"></p-column>
-  <p-column field="salate_descriere" header="Salate_descriere" [sortable]="true"></p-column>
-  <p-column field="salate_pret" header="Salate_pret" [sortable]="true"></p-column>
-  <p-column field="salate_gramaj" header="Salate_gramaj" [sortable]="true"></p-column>
+  <p-column field="sal_tip" header="Salate_tip" [sortable]="true"></p-column>
+  <p-column field="sal_descriere" header="Salate_descriere" [sortable]="true"></p-column>
+  <p-column field="sal_pret" header="Salate_pret" [sortable]="true"></p-column>
+  <p-column field="sal_gramaj" header="Salate_gramaj" [sortable]="true"></p-column>
   <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
 </p-dataTable>
 

@@ -29,17 +29,18 @@ export class BauturiComponent implements OnInit {
   
     }
     deleteBauturi(select: Bauturi) {
-      this.apiService.delete('api/bauturi/' + select.bauturi_tip).subscribe(res => {
+      this.apiService.delete('api/bauturi/' + select.id).subscribe(res => {
         console.log(res);
       });
   }
 }
 
 interface Bauturi {
-  bauturi_tip: string,
-  bauturi_descriere: string,
-  bauturi_pret: string,
-  bauturi_gramaj: string
+  id: string,
+  b_tip:string,
+  b_descriere: string,
+  b_pret: string,
+  b_gramaj: string
 }
   
 

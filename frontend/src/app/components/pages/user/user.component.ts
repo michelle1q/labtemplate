@@ -35,6 +35,17 @@ export class UserComponent implements OnInit {
 
   }
 
+  createUser(nume:string,prenume:string,email:string) {
+    const userz=new User(nume,prenume,email);
+   this.apiService.post('api/user/' ,userz).subscribe(res => {
+   // this.viewUser(userz);
+     console.log(res);
+   },error=>{
+     console.log(error);
+   });
+   
+  }
+
   deleteUser(select: User) {
     this.apiService.delete('api/user/' + select.id).subscribe(res => {
       console.log(res);
@@ -51,4 +62,16 @@ interface User {
   email: string
 }
 
+class User{
+  id:string;
+  nume:string;
+  prenume:string;
+  email:string;
 
+  constructor(nume?:string,prenume?:string,email?:string)
+  {
+    this.nume=nume;
+    this.prenume=prenume;
+    this.email=email;
+  }
+}
